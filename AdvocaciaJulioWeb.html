@@ -1,0 +1,3181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almeida & Costa Advogados | Advocacia Estratégica e Consultoria Jurídica</title>
+    <meta name="description" content="Escritório de advocacia com atuação estratégica em Direito Empresarial, Trabalhista, Previdenciário, Família, Civil e Criminal. Atendimento em todo o Brasil.">
+    <meta name="theme-color" content="#0B1220">
+
+    <!-- Google Fonts: Cormorant Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           SISTEMA DE DESIGN (:root) — ACABAMENTO DE ALTA PRECISÃO
+           ========================================================================== */
+        :root {
+            /* Paleta Principal */
+            --bg-primary: #0B1220;
+            --bg-secondary: #111A2E;
+            --surface-card: rgba(255, 255, 255, 0.035);
+            --surface-card-hover: rgba(255, 255, 255, 0.06);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(255, 255, 255, 0.14);
+            --border-gold: rgba(201, 162, 75, 0.42);
+
+            /* Dourado de Destaque */
+            --gold-primary: #C9A24B;
+            --gold-light: #E6C77A;
+            --gold-gradient: linear-gradient(135deg, #C9A24B 0%, #E6C77A 50%, #B5892E 100%);
+
+            /* Textos */
+            --text-primary: #F5F1E8;
+            --text-secondary: #A8B0C0;
+            --text-muted: #6C768A;
+
+            /* Seção Clara (Respiro Editorial) */
+            --light-bg: #F7F4EC;
+            --light-surface: #EFECE2;
+            --light-text: #0B1220;
+            --light-text-secondary: #333D52;
+            --light-border: rgba(11, 18, 32, 0.1);
+
+            /* Feedback */
+            --error-color: #E05A5A;
+
+            /* Tipografia */
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Espaçamento e Geometria (Grade 8px) */
+            --container-max: 1200px;
+            --section-py-desktop: 120px;
+            --section-py-mobile: 72px;
+            --radius-card: 12px;
+            --radius-pill: 999px;
+            --header-height: 80px;
+
+            /* Sombras e Reflexos de Luz */
+            --shadow-soft: 0 24px 48px -12px rgba(3, 7, 15, 0.72);
+            --shadow-gold: 0 10px 28px -6px rgba(201, 162, 75, 0.32);
+            --inner-specular: inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+            --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Reset & Base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de rolagem refinada */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(201, 162, 75, 0.3);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-primary);
+        }
+
+        ::selection {
+            background: rgba(201, 162, 75, 0.28);
+            color: var(--text-primary);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Textura de Ruído Sutil */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.024;
+        }
+
+        /* Barra de Progresso de Leitura no Topo */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: var(--gold-gradient);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* Containers e Seções */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: var(--section-py-mobile) 0;
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: var(--section-py-desktop) 0;
+            }
+            .container {
+                padding: 0 32px;
+            }
+        }
+
+        .section-alt {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-light {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        /* Tipografia Editorial */
+        h1, h2, h3, h4, .serif {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.06;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .section-light h2,
+        .section-light h3,
+        .section-light h4 {
+            color: var(--light-text);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5.2vw, 5rem); /* 40px mobile a 80px desktop */
+        }
+
+        h2 {
+            font-size: clamp(2rem, 3.6vw, 3.25rem); /* 32px a 52px */
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: clamp(1.375rem, 2vw, 1.85rem); /* 22px a 30px */
+            line-height: 1.18;
+        }
+
+        p {
+            font-size: clamp(0.968rem, 1.05vw, 1.0625rem);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .section-light p {
+            color: var(--light-text-secondary);
+        }
+
+        .gold-italic {
+            font-style: italic;
+            font-weight: 600;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding-right: 4px;
+        }
+
+        /* Rótulos de Seção */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.6875rem; /* 11px refinado */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--gold-primary);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary));
+        }
+
+        .section-light .section-label {
+            color: #8C6920;
+        }
+        .section-light .section-label::before {
+            background: linear-gradient(90deg, transparent, #8C6920);
+        }
+
+        .section-header {
+            max-width: 660px;
+            margin-bottom: 56px;
+        }
+
+        /* Botões de Alta Precisão */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: var(--radius-pill);
+            font-family: var(--font-sans);
+            font-size: 0.8125rem; /* 13px */
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo), border-color 0.3s ease, background-color 0.3s ease;
+            user-select: none;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 3px;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #0B1220;
+            box-shadow: 0 6px 20px -6px rgba(201, 162, 75, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-gold::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.65s var(--ease-out-expo);
+        }
+
+        .btn-gold:hover::after {
+            left: 140%;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.16);
+            box-shadow: var(--inner-specular);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+            background: rgba(201, 162, 75, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           1. HEADER FIXO & GAVETA MOBILE REFINADA (SLIDE-OVER DRAWER)
+           ========================================================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 900;
+            transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, height 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .site-header.scrolled {
+            background-color: rgba(11, 18, 32, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom-color: var(--border-subtle);
+            height: 72px;
+        }
+
+        .header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 950;
+        }
+
+        .brand-monogram {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid rgba(201, 162, 75, 0.45);
+            background: linear-gradient(145deg, rgba(201, 162, 75, 0.12), rgba(11, 18, 32, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            box-shadow: var(--inner-specular);
+            flex-shrink: 0;
+        }
+
+        .brand-text-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-name {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+            line-height: 1;
+        }
+
+        .brand-name span {
+            color: var(--gold-primary);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .brand-sub {
+            font-family: var(--font-sans);
+            font-size: 0.5625rem; /* 9px super elegante */
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            color: var(--text-secondary);
+        }
+
+        .nav-desktop {
+            display: none;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 0.8125rem; /* 13px */
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.25s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold-primary);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary);
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        /* Botão do Menu Mobile — Estilo Joalheria Digital */
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            height: 40px;
+            padding: 0 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            color: var(--text-primary);
+            cursor: pointer;
+            z-index: 950;
+            box-shadow: var(--inner-specular);
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            border-color: var(--border-gold);
+            background: rgba(201, 162, 75, 0.06);
+        }
+
+        .menu-toggle-label {
+            font-family: var(--font-sans);
+            font-size: 0.6875rem; /* 11px */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover .menu-toggle-label {
+            color: var(--text-primary);
+        }
+
+        .menu-bars {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 4px;
+            width: 16px;
+        }
+
+        .menu-bars span {
+            display: block;
+            height: 1.5px;
+            background-color: var(--gold-primary);
+            border-radius: 2px;
+            transition: transform 0.35s var(--ease-out-expo), width 0.3s var(--ease-out-expo), opacity 0.25s ease;
+        }
+
+        .menu-bars span:nth-child(1) { width: 16px; }
+        .menu-bars span:nth-child(2) { width: 11px; }
+        .menu-bars span:nth-child(3) { width: 14px; }
+
+        .menu-toggle.open {
+            border-color: var(--gold-primary);
+            background: rgba(11, 18, 32, 0.95);
+        }
+        .menu-toggle.open .menu-bars span:nth-child(1) {
+            width: 16px;
+            transform: translateY(5.5px) rotate(45deg);
+        }
+        .menu-toggle.open .menu-bars span:nth-child(2) {
+            opacity: 0;
+            width: 0;
+        }
+        .menu-toggle.open .menu-bars span:nth-child(3) {
+            width: 16px;
+            transform: translateY(-5.5px) rotate(-45deg);
+        }
+
+        /* Backdrop Escuro Suave */
+        .mobile-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 9, 18, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 910;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+
+        .mobile-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Gaveta Lateral Elegante (Slide-Over Drawer) */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 370px;
+            height: 100dvh;
+            background: linear-gradient(165deg, #10192D 0%, #090E1A 100%);
+            border-left: 1px solid rgba(201, 162, 75, 0.22);
+            box-shadow: -24px 0 60px rgba(0, 0, 0, 0.75);
+            z-index: 920;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 96px 28px 28px;
+            transform: translateX(100%);
+            transition: transform 0.5s var(--ease-out-expo);
+            overflow-y: auto;
+        }
+
+        .mobile-drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer-section-title {
+            font-size: 0.625rem; /* 10px */
+            text-transform: uppercase;
+            letter-spacing: 0.24em;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .drawer-section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 162, 75, 0.2);
+        }
+
+        .mobile-nav-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+            transition: padding-left 0.3s var(--ease-out-expo), border-color 0.3s ease;
+            opacity: 0;
+            transform: translateX(16px);
+        }
+
+        .mobile-drawer.open .mobile-nav-item {
+            opacity: 1;
+            transform: translateX(0);
+            transition: opacity 0.45s var(--ease-out-expo), transform 0.45s var(--ease-out-expo), padding-left 0.3s var(--ease-out-expo), border-color 0.3s ease;
+        }
+
+        .mobile-drawer.open .mobile-nav-item:nth-child(1) { transition-delay: 60ms; }
+        .mobile-drawer.open .mobile-nav-item:nth-child(2) { transition-delay: 110ms; }
+        .mobile-drawer.open .mobile-nav-item:nth-child(3) { transition-delay: 160ms; }
+        .mobile-drawer.open .mobile-nav-item:nth-child(4) { transition-delay: 210ms; }
+        .mobile-drawer.open .mobile-nav-item:nth-child(5) { transition-delay: 260ms; }
+
+        .mobile-nav-item:hover {
+            padding-left: 10px;
+            border-bottom-color: rgba(201, 162, 75, 0.4);
+        }
+
+        .mobile-nav-left {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+        }
+
+        .mobile-nav-num {
+            font-family: var(--font-sans);
+            font-size: 0.6875rem; /* 11px */
+            font-weight: 500;
+            color: var(--gold-primary);
+            letter-spacing: 0.08em;
+            opacity: 0.85;
+        }
+
+        .mobile-nav-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem; /* 20px elegante e proporcional */
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .mobile-nav-sub {
+            font-family: var(--font-sans);
+            font-size: 0.718rem; /* 11.5px */
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .mobile-nav-arrow {
+            color: var(--text-muted);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .mobile-nav-item:hover .mobile-nav-arrow {
+            color: var(--gold-primary);
+            transform: translateX(3px);
+        }
+
+        /* Rodapé Concierge dentro do Menu Mobile */
+        .drawer-concierge {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .concierge-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #25D366;
+            box-shadow: 0 0 8px #25D366;
+        }
+
+        .concierge-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-desktop {
+                display: flex;
+            }
+            .header-cta {
+                display: inline-flex;
+                padding: 11px 22px;
+                font-size: 0.75rem;
+            }
+            .menu-toggle,
+            .mobile-backdrop,
+            .mobile-drawer {
+                display: none;
+            }
+        }
+
+        /* ==========================================================================
+           2. HERO SECTION (COM CANTONEIRAS DE PRECISÃO)
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            padding-top: calc(var(--header-height) + 40px);
+            padding-bottom: 72px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.1) 0%, transparent 42%),
+                radial-gradient(circle at 85% 78%, rgba(201, 162, 75, 0.06) 0%, transparent 38%),
+                var(--bg-primary);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 6.8fr 5.2fr;
+                gap: 56px;
+            }
+        }
+
+        .hero-subtitle {
+            max-width: 540px;
+            margin-top: 22px;
+            margin-bottom: 34px;
+            font-size: clamp(1rem, 1.15vw, 1.125rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 44px;
+        }
+
+        .hero-actions .btn {
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .hero-actions .btn {
+                width: auto;
+            }
+        }
+
+        /* Selos Discretos */
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 28px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 0.781rem; /* 12.5px */
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .badge-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold-primary);
+            flex-shrink: 0;
+        }
+
+        /* Card Glass com Cantoneiras de Joalheria */
+        .hero-card {
+            background: linear-gradient(160deg, rgba(19, 29, 51, 0.78) 0%, rgba(11, 18, 32, 0.88) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(201, 162, 75, 0.24);
+            border-radius: var(--radius-card);
+            padding: 32px 24px;
+            box-shadow: var(--shadow-soft), var(--inner-specular);
+            position: relative;
+        }
+
+        @media (min-width: 640px) {
+            .hero-card {
+                padding: 38px 34px;
+            }
+        }
+
+        /* Microcantoneiras Douradas nos Cantos do Card */
+        .corner-ornament {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-color: var(--gold-primary);
+            pointer-events: none;
+            opacity: 0.65;
+        }
+        .corner-tl { top: 10px; left: 10px; border-top: 1px solid; border-left: 1px solid; }
+        .corner-tr { top: 10px; right: 10px; border-top: 1px solid; border-right: 1px solid; }
+        .corner-bl { bottom: 10px; left: 10px; border-bottom: 1px solid; border-left: 1px solid; }
+        .corner-br { bottom: 10px; right: 10px; border-bottom: 1px solid; border-right: 1px solid; }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .hero-card-tag {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        .hero-card-title {
+            font-family: var(--font-display);
+            font-size: 1.65rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .hero-card-desc {
+            font-size: 0.843rem;
+            color: var(--text-secondary);
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.6875rem; /* 11px */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 7px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 13px 15px;
+            background: rgba(8, 13, 24, 0.78);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+
+        /* Select Customizado com Seta Dourada SVG */
+        select.form-control {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23C9A24B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        select.form-control option {
+            background-color: #0B1220;
+            color: var(--text-primary);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            background: rgba(11, 18, 32, 0.95);
+            box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.12);
+        }
+
+        .form-control.invalid {
+            border-color: var(--error-color);
+        }
+
+        .error-msg {
+            display: none;
+            font-size: 0.72rem;
+            color: var(--error-color);
+            margin-top: 5px;
+        }
+
+        .form-control.invalid + .error-msg {
+            display: block;
+        }
+
+        .form-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        /* ==========================================================================
+           3. FAIXA DE NÚMEROS
+           ========================================================================== */
+        .metrics-bar {
+            padding: 52px 0;
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .metrics-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0;
+            }
+        }
+
+        .metric-item {
+            padding: 4px 0;
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .metric-item {
+                padding: 0 32px;
+            }
+            .metric-item:first-child {
+                padding-left: 0;
+            }
+            .metric-item:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 12%;
+                height: 76%;
+                width: 1px;
+                background: linear-gradient(180deg, transparent, var(--border-highlight), transparent);
+            }
+        }
+
+        .metric-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.15rem, 3.6vw, 3.25rem);
+            font-weight: 600;
+            color: var(--gold-light);
+            line-height: 1;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+
+        .metric-label {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        /* ==========================================================================
+           4. ÁREAS DE ATUAÇÃO (SPOTLIGHT + INNER SPECULAR)
+           ========================================================================== */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .areas-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .area-card.featured {
+                grid-column: span 2;
+            }
+        }
+
+        .area-card {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 24px;
+            text-decoration: none;
+            box-shadow: var(--inner-specular);
+            transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease, box-shadow 0.4s ease;
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+        }
+
+        .area-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                480px circle at var(--mouse-x) var(--mouse-y),
+                rgba(201, 162, 75, 0.12),
+                transparent 40%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+            box-shadow: var(--shadow-soft), var(--inner-specular);
+        }
+
+        .area-card:hover::before {
+            opacity: 1;
+        }
+
+        .area-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .area-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(201, 162, 75, 0.07);
+            border: 1px solid rgba(201, 162, 75, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+        }
+
+        .area-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .area-index {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: rgba(201, 162, 75, 0.45);
+        }
+
+        .area-card h3 {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .area-card p {
+            font-size: 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .area-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--gold-primary);
+        }
+
+        .area-link svg {
+            width: 15px;
+            height: 15px;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .area-card:hover .area-link svg {
+            transform: translateX(5px);
+        }
+
+        .area-tag {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            background: rgba(201, 162, 75, 0.12);
+            color: var(--gold-light);
+            border: 1px solid rgba(201, 162, 75, 0.28);
+        }
+
+        /* ==========================================================================
+           5. SOBRE O ESCRITÓRIO
+           ========================================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 5fr 7fr;
+                gap: 72px;
+            }
+        }
+
+        .about-visual {
+            position: relative;
+            max-width: 440px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .about-frame {
+            position: absolute;
+            top: 16px;
+            left: -16px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(201, 162, 75, 0.45);
+            border-radius: var(--radius-card);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .about-portrait {
+            position: relative;
+            z-index: 2;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            background: linear-gradient(160deg, #16223B 0%, #090F1C 100%);
+            border: 1px solid var(--border-subtle);
+            aspect-ratio: 4 / 4.8;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 28px 0;
+            padding: 24px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        @media (min-width: 640px) {
+            .about-values {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .value-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .value-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gold-primary);
+            margin-bottom: 2px;
+        }
+
+        .value-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .value-desc {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .signature-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .signature-meta strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .signature-meta span {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.04em;
+        }
+
+        /* ==========================================================================
+           6. COMO FUNCIONA (TIMELINE)
+           ========================================================================== */
+        .timeline-wrapper {
+            position: relative;
+            margin-top: 56px;
+        }
+
+        .timeline-track {
+            position: absolute;
+            background-color: var(--border-subtle);
+            z-index: 1;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            background: var(--gold-gradient);
+            transition: width 0.25s ease, height 0.25s ease;
+        }
+
+        @media (max-width: 1023px) {
+            .timeline-track {
+                top: 0;
+                bottom: 0;
+                left: 25px;
+                width: 1.5px;
+            }
+            .timeline-progress {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-track {
+                top: 28px;
+                left: 0;
+                right: 0;
+                height: 1.5px;
+            }
+            .timeline-progress {
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0%;
+            }
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 24px;
+            }
+        }
+
+        .timeline-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-step {
+                flex-direction: column;
+                padding-right: 12px;
+            }
+        }
+
+        .step-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            flex-shrink: 0;
+            box-shadow: 0 0 0 6px var(--bg-primary);
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           7. DIFERENCIAIS (SEÇÃO CLARA #F7F4EC)
+           ========================================================================== */
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .differentials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        .diff-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--light-border);
+            border-radius: var(--radius-card);
+            padding: 36px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: 0 12px 32px -12px rgba(11, 18, 32, 0.05);
+            transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease;
+        }
+
+        .diff-card:hover {
+            transform: translateY(-4px);
+            border-color: #8C6920;
+        }
+
+        .diff-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background-color: var(--light-surface);
+            color: #8C6920;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .diff-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .diff-card h3 {
+            color: var(--light-text);
+            font-size: 1.45rem;
+        }
+
+        .diff-card p {
+            color: var(--light-text-secondary);
+            font-size: 0.92rem;
+        }
+
+        /* ==========================================================================
+           8. DEPOIMENTOS (CARROSSEL)
+           ========================================================================== */
+        .testimonial-carousel {
+            position: relative;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+            padding: 40px 24px;
+            overflow: hidden;
+            box-shadow: var(--inner-specular);
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-carousel {
+                padding: 56px 64px;
+            }
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.65s var(--ease-out-expo);
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .stars-row {
+            display: flex;
+            gap: 5px;
+            color: var(--gold-primary);
+        }
+
+        .stars-row svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: clamp(1.35rem, 2.4vw, 2.05rem);
+            line-height: 1.38;
+            color: var(--text-primary);
+            max-width: 880px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 6px;
+        }
+
+        .author-line {
+            width: 28px;
+            height: 1px;
+            background-color: var(--gold-primary);
+        }
+
+        .author-info strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .author-info span {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 36px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot-btn {
+            width: 20px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.16);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, width 0.3s var(--ease-out-expo);
+        }
+
+        .dot-btn.active {
+            width: 40px;
+            background-color: var(--gold-primary);
+        }
+
+        .carousel-arrows {
+            display: flex;
+            gap: 10px;
+        }
+
+        .arrow-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .arrow-btn:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* ==========================================================================
+           9. EQUIPE
+           ========================================================================== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+
+        @media (min-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .team-card {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--inner-specular);
+            transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+        }
+
+        .team-photo {
+            aspect-ratio: 4 / 4.4;
+            background: linear-gradient(165deg, #16223A 0%, #0A101D 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .team-info {
+            padding: 24px;
+        }
+
+        .team-oab {
+            font-size: 0.6875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--gold-primary);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .team-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .team-info p {
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================================================
+           10. FAQ
+           ========================================================================== */
+        .faq-container {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 22px 0;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+            font-weight: 500;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            cursor: pointer;
+            transition: color 0.25s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--gold-light);
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--gold-primary);
+            transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            border-color: var(--gold-primary);
+        }
+
+        .faq-answer-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s var(--ease-out-expo);
+        }
+
+        .faq-item.open .faq-answer-wrapper {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer {
+            overflow: hidden;
+        }
+
+        .faq-answer p {
+            padding-bottom: 22px;
+            font-size: 0.92rem;
+            max-width: 740px;
+        }
+
+        /* ==========================================================================
+           11. CTA FINAL
+           ========================================================================== */
+        .cta-box {
+            background:
+                radial-gradient(circle at 90% 10%, rgba(201, 162, 75, 0.13) 0%, transparent 45%),
+                linear-gradient(145deg, #111A2E 0%, #080E1A 100%);
+            border: 1px solid rgba(201, 162, 75, 0.32);
+            border-radius: var(--radius-card);
+            padding: 44px 24px;
+            box-shadow: var(--shadow-soft), var(--inner-specular);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .cta-box {
+                padding: 64px 56px;
+            }
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 44px;
+            align-items: start;
+        }
+
+        @media (min-width: 1024px) {
+            .cta-grid {
+                grid-template-columns: 5fr 7fr;
+                gap: 56px;
+            }
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 640px) {
+            .form-row-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           12. RODAPÉ
+           ========================================================================== */
+        .site-footer {
+            background-color: #070C16;
+            border-top: 1px solid var(--border-subtle);
+            padding: 72px 0 36px;
+            font-size: 0.843rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+            }
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--gold-primary);
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a,
+        .footer-links li {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .social-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .social-btn:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        .footer-legal {
+            padding-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        .oab-compliance {
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--gold-primary);
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+        }
+
+        /* Botões Flutuantes */
+        .floating-wa {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background-color: #25D366;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+            z-index: 890;
+            transition: transform 0.3s var(--ease-out-expo);
+            animation: wa-pulse 2.5s infinite;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.08);
+        }
+
+        @keyframes wa-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 22px;
+            left: 22px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(17, 26, 46, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 890;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* Animações de Rolagem */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 90ms; }
+        .delay-2 { transition-delay: 180ms; }
+        .delay-3 { transition-delay: 270ms; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Progresso de Leitura -->
+    <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+    <!-- Textura Cinematográfica -->
+    <svg class="noise-overlay" aria-hidden="true">
+        <filter id="luxury-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#luxury-noise)"/>
+    </svg>
+
+    <!-- 1. HEADER FIXO -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="#inicio" class="brand-logo" aria-label="Almeida & Costa Advogados">
+                <div class="brand-monogram">A&C</div>
+                <div class="brand-text-wrap">
+                    <span class="brand-name" data-config="firmName">Almeida <span>&</span> Costa</span>
+                    <span class="brand-sub">Advogados Associados</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Navegação Principal">
+                <a href="#areas" class="nav-link">Áreas de Atuação</a>
+                <a href="#sobre" class="nav-link">O Escritório</a>
+                <a href="#como-funciona" class="nav-link">Metodologia</a>
+                <a href="#equipe" class="nav-link">Sócios</a>
+                <a href="#faq" class="nav-link">Dúvidas</a>
+            </nav>
+
+            <a href="#contato-final" class="btn btn-gold header-cta" data-wa-direct>
+                <span>Falar com advogado</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span class="menu-toggle-label" id="menu-toggle-label">Menu</span>
+                <div class="menu-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Backdrop + Gaveta Lateral Mobile Refinada -->
+    <div class="mobile-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
+
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menu Mobile" aria-hidden="true">
+        <div>
+            <div class="drawer-section-title">Índice de Navegação</div>
+            <nav class="mobile-nav-list">
+                <a href="#areas" class="mobile-nav-item mobile-link">
+                    <div class="mobile-nav-left">
+                        <span class="mobile-nav-num">01</span>
+                        <div>
+                            <span class="mobile-nav-title">Áreas de Atuação</span>
+                            <span class="mobile-nav-sub">Especialidades consultivas e contenciosas</span>
+                        </div>
+                    </div>
+                    <svg class="mobile-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="#sobre" class="mobile-nav-item mobile-link">
+                    <div class="mobile-nav-left">
+                        <span class="mobile-nav-num">02</span>
+                        <div>
+                            <span class="mobile-nav-title">O Escritório</span>
+                            <span class="mobile-nav-sub">Nossa história, valores e estrutura</span>
+                        </div>
+                    </div>
+                    <svg class="mobile-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="#como-funciona" class="mobile-nav-item mobile-link">
+                    <div class="mobile-nav-left">
+                        <span class="mobile-nav-num">03</span>
+                        <div>
+                            <span class="mobile-nav-title">Metodologia</span>
+                            <span class="mobile-nav-sub">Etapas de condução do seu processo</span>
+                        </div>
+                    </div>
+                    <svg class="mobile-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="#equipe" class="mobile-nav-item mobile-link">
+                    <div class="mobile-nav-left">
+                        <span class="mobile-nav-num">04</span>
+                        <div>
+                            <span class="mobile-nav-title">Corpo Jurídico</span>
+                            <span class="mobile-nav-sub">Sócios titulares e credenciais OAB</span>
+                        </div>
+                    </div>
+                    <svg class="mobile-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="#faq" class="mobile-nav-item mobile-link">
+                    <div class="mobile-nav-left">
+                        <span class="mobile-nav-num">05</span>
+                        <div>
+                            <span class="mobile-nav-title">Dúvidas Frequentes</span>
+                            <span class="mobile-nav-sub">Respostas sobre consultas e honorários</span>
+                        </div>
+                    </div>
+                    <svg class="mobile-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+            </nav>
+        </div>
+
+        <div class="drawer-concierge">
+            <div class="concierge-status">
+                <span class="status-dot"></span>
+                <span>Canal Jurídico Direto • Sigilo OAB</span>
+            </div>
+            <p class="concierge-meta" data-config="addressDisplay">
+                Edifício Aracati Office, Sala 804 — Centro, Imperatriz - MA
+            </p>
+            <a href="#contato-final" class="btn btn-gold mobile-link" data-wa-direct style="width: 100%; padding: 14px 20px;">
+                <span>Atendimento no WhatsApp</span>
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div>
+                    <div class="section-label reveal">Banca Jurídica de Alta Complexidade</div>
+                    <h1 class="reveal delay-1">
+                        Defesa técnica e <span class="gold-italic">estratégica</span> para decisões que exigem rigor.
+                    </h1>
+                    <p class="hero-subtitle reveal delay-2">
+                        Atuação personalizada na proteção de patrimônios, empresas e direitos fundamentais. Clareza processual, sigilo absoluto e comunicação direta com os sócios.
+                    </p>
+                    <div class="hero-actions reveal delay-3">
+                        <a href="#" class="btn btn-gold" data-wa-direct>
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                            <span>Falar com Advogado</span>
+                        </a>
+                        <a href="#areas" class="btn btn-outline">
+                            <span>Ver áreas de atuação</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-badges reveal delay-3">
+                        <div class="badge-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                            <span data-config="oabBadge">OAB/MA Regular • PJ 14.920</span>
+                        </div>
+                        <div class="badge-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>+15 anos de atuação</span>
+                        </div>
+                        <div class="badge-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <span>Atendimento em todo o Brasil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Glass com Microcantoneiras -->
+                <div class="hero-card reveal delay-2">
+                    <span class="corner-ornament corner-tl"></span>
+                    <span class="corner-ornament corner-tr"></span>
+                    <span class="corner-ornament corner-bl"></span>
+                    <span class="corner-ornament corner-br"></span>
+
+                    <div class="hero-card-header">
+                        <span class="hero-card-tag">Protocolo Confidencial</span>
+                        <span class="concierge-status" style="font-size: 0.6875rem;">
+                            <span class="status-dot"></span> Online
+                        </span>
+                    </div>
+                    <h2 class="hero-card-title">Análise inicial do seu caso</h2>
+                    <p class="hero-card-desc">Preencha os dados abaixo para direcionarmos sua demanda ao sócio especialista na área.</p>
+
+                    <form id="hero-form" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="hero-name">Nome completo</label>
+                            <input type="text" id="hero-name" class="form-control" placeholder="Ex.: Dr. Roberto Mendes" required>
+                            <span class="error-msg">Por favor, informe seu nome.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="hero-phone">WhatsApp com DDD</label>
+                            <input type="tel" id="hero-phone" class="form-control" placeholder="(98) 99140-6415" required>
+                            <span class="error-msg">Informe um número de WhatsApp válido.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="hero-area">Natureza da demanda</label>
+                            <select id="hero-area" class="form-control" required>
+                                <option value="" disabled selected>Selecione a área jurídica</option>
+                                <option value="Direito Empresarial e Societário">Direito Empresarial e Societário</option>
+                                <option value="Direito Trabalhista">Direito Trabalhista</option>
+                                <option value="Direito Previdenciário">Direito Previdenciário</option>
+                                <option value="Direito de Família e Sucessões">Direito de Família e Sucessões</option>
+                                <option value="Direito Civil e Contratos">Direito Civil e Contratos</option>
+                                <option value="Direito Criminal Consultivo">Direito Criminal Consultivo</option>
+                            </select>
+                            <span class="error-msg">Selecione uma área de atuação.</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 6px;">
+                            <span>Iniciar Atendimento Sigiloso</span>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </button>
+
+                        <div class="form-note">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Protegido por sigilo profissional (Art. 7º Estatuto da OAB).</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FAIXA DE NÚMEROS -->
+        <div class="metrics-bar" aria-label="Indicadores do Escritório">
+            <div class="container metrics-grid">
+                <div class="metric-item reveal">
+                    <div class="metric-number">
+                        <span>+</span><span class="counter" data-target="15">0</span><span> anos</span>
+                    </div>
+                    <div class="metric-label">De atuação jurídica ininterrupta</div>
+                </div>
+
+                <div class="metric-item reveal delay-1">
+                    <div class="metric-number">
+                        <span>+</span><span class="counter" data-target="2400">0</span>
+                    </div>
+                    <div class="metric-label">Consultorias e processos conduzidos</div>
+                </div>
+
+                <div class="metric-item reveal delay-2">
+                    <div class="metric-number">
+                        <span class="counter" data-target="27">0</span><span> estados</span>
+                    </div>
+                    <div class="metric-label">Cobertura nacional via processo digital</div>
+                </div>
+
+                <div class="metric-item reveal delay-3">
+                    <div class="metric-number">
+                        <span class="counter" data-target="100">0</span><span>%</span>
+                    </div>
+                    <div class="metric-label">Atendimento conduzido por sócios</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. ÁREAS DE ATUAÇÃO -->
+        <section id="areas">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Especialidades</div>
+                    <h2>Atuação técnica nas esferas decisivas do Direito.</h2>
+                    <p>Estruturamos teses jurídicas sólidas e estratégias preventivas para pessoas físicas e jurídicas.</p>
+                </div>
+
+                <div class="areas-grid">
+                    <!-- 1. Empresarial -->
+                    <a href="#contato-final" class="area-card featured spotlight-card reveal" data-area-select="Direito Empresarial e Societário">
+                        <div>
+                            <div class="area-top-row">
+                                <div class="area-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                        <path d="M9 3v18M15 8h2M15 12h2M15 16h2M5 8h2M5 12h2M5 16h2"/>
+                                    </svg>
+                                </div>
+                                <span class="area-tag">Núcleo Corporativo</span>
+                            </div>
+                            <h3>Direito Empresarial e Societário</h3>
+                            <p>Assessoria preventiva para sociedades, blindagem patrimonial lícita, estruturação de holdings familiares, contratos mercantis e defesa em execuções fiscais.</p>
+                        </div>
+                        <span class="area-link">
+                            Solicitar análise empresarial
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <!-- 2. Trabalhista -->
+                    <a href="#contato-final" class="area-card spotlight-card reveal delay-1" data-area-select="Direito Trabalhista">
+                        <div>
+                            <div class="area-top-row">
+                                <div class="area-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                                    </svg>
+                                </div>
+                                <span class="area-index">II</span>
+                            </div>
+                            <h3>Direito Trabalhista</h3>
+                            <p>Defesa patronal estratégica, auditoria de passivos trabalhistas e representação de executivos e profissionais em reclamações de alta complexidade.</p>
+                        </div>
+                        <span class="area-link">
+                            Consultar especialista
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <!-- 3. Família -->
+                    <a href="#contato-final" class="area-card spotlight-card reveal" data-area-select="Direito de Família e Sucessões">
+                        <div>
+                            <div class="area-top-row">
+                                <div class="area-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 3v18M3 9l9-4 9 4M6 14l-3-5 3-5 3 5-3 5zm12 0l-3-5 3-5 3 5-3 5z"/>
+                                    </svg>
+                                </div>
+                                <span class="area-index">III</span>
+                            </div>
+                            <h3>Família e Sucessões</h3>
+                            <p>Condução discreta em divórcios patrimoniais, inventários extrajudiciais e judiciais, testamentos, planejamento sucessório e partilha de bens.</p>
+                        </div>
+                        <span class="area-link">
+                            Consultar especialista
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <!-- 4. Civil -->
+                    <a href="#contato-final" class="area-card spotlight-card reveal delay-1" data-area-select="Direito Civil e Contratos">
+                        <div>
+                            <div class="area-top-row">
+                                <div class="area-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="8" y1="13" x2="16" y2="13"/>
+                                        <line x1="8" y1="17" x2="13" y2="17"/>
+                                    </svg>
+                                </div>
+                                <span class="area-index">IV</span>
+                            </div>
+                            <h3>Civil e Imobiliário</h3>
+                            <p>Responsabilidade civil, litígios contratuais, regularização de imóveis, usucapião, proteção possessória e revisão de negócios jurídicos.</p>
+                        </div>
+                        <span class="area-link">
+                            Consultar especialista
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <!-- 5. Previdenciário -->
+                    <a href="#contato-final" class="area-card spotlight-card reveal delay-2" data-area-select="Direito Previdenciário">
+                        <div>
+                            <div class="area-top-row">
+                                <div class="area-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        <path d="M12 8v4l3 2"/>
+                                    </svg>
+                                </div>
+                                <span class="area-index">V</span>
+                            </div>
+                            <h3>Direito Previdenciário</h3>
+                            <p>Planejamento previdenciário, concessão e revisão de aposentadorias no regime geral e próprio, além de benefícios por incapacidade.</p>
+                        </div>
+                        <span class="area-link">
+                            Consultar especialista
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <!-- 6. Criminal -->
+                    <a href="#contato-final" class="area-card spotlight-card reveal" data-area-select="Direito Criminal Consultivo">
+                        <div>
+                            <div class="area-top-row">
+                                <div class="area-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="12" cy="12" r="9"/>
+                                        <path d="M9 12l2 2 4-4"/>
+                                    </svg>
+                                </div>
+                                <span class="area-index">VI</span>
+                            </div>
+                            <h3>Direito Penal Econômico</h3>
+                            <p>Defesa técnica em crimes tributários, empresariais e financeiros, acompanhamento em inquéritos e atuação nos tribunais superiores.</p>
+                        </div>
+                        <span class="area-link">
+                            Consultar especialista
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SOBRE O ESCRITÓRIO -->
+        <section id="sobre" class="section-alt">
+            <div class="container about-grid">
+                <div class="about-visual reveal">
+                    <div class="about-frame"></div>
+                    <div class="about-portrait">
+                        <!-- TROCAR POR FOTO REAL DO SÓCIO OU DA SEDE DO ESCRITÓRIO -->
+                        <svg width="100%" height="100%" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder Institucional">
+                            <defs>
+                                <linearGradient id="archGrad" x1="0" y1="0" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#1A2744"/>
+                                    <stop offset="100%" stop-color="#0B1220"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="500" fill="url(#archGrad)"/>
+                            <line x1="60" y1="0" x2="60" y2="500" stroke="rgba(201,162,75,0.12)" stroke-width="1"/>
+                            <line x1="340" y1="0" x2="340" y2="500" stroke="rgba(201,162,75,0.12)" stroke-width="1"/>
+                            <circle cx="200" cy="185" r="54" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.05)"/>
+                            <path d="M105 420C105 345 145 295 200 295C255 295 295 345 295 420" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.04)"/>
+                            <text x="200" y="465" text-anchor="middle" fill="#A8B0C0" font-family="Inter, sans-serif" font-size="9.5" letter-spacing="3">RETRATO INSTITUCIONAL</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="reveal delay-1">
+                    <div class="section-label">Tradição & Rigor</div>
+                    <h2>Advocacia artesanal contra soluções padronizadas.</h2>
+                    <p style="margin-bottom: 16px;">
+                        Fundado sob a premissa de que demandas jurídicas críticas não admitem tratamento industrial, o escritório <strong>Almeida & Costa Advogados</strong> atua com dedicação seletiva e estudo minucioso de cada dossiê.
+                    </p>
+                    <p>
+                        Combinamos a solidez da doutrina clássica à velocidade dos meios digitais modernos, proporcionando aos nossos constituintes acesso direto aos sócios e relatórios claros sobre cada etapa processual.
+                    </p>
+
+                    <div class="about-values">
+                        <div class="value-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <span class="value-title">Sigilo Inegociável</span>
+                            <span class="value-desc">Preservação absoluta da imagem e dos dados patrimoniais de cada cliente.</span>
+                        </div>
+
+                        <div class="value-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            <span class="value-title">Precisão Técnica</span>
+                            <span class="value-desc">Peças jurídicas fundamentadas na jurisprudência atualizada dos tribunais.</span>
+                        </div>
+
+                        <div class="value-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            <span class="value-title">Clareza Direta</span>
+                            <span class="value-desc">Comunicação transparente, sem jargões desnecessários, direto no WhatsApp.</span>
+                        </div>
+                    </div>
+
+                    <div class="signature-block">
+                        <div class="signature-meta">
+                            <strong>Dr. Henrique de Almeida</strong>
+                            <span>Sócio-Fundador • OAB/MA 14.920</span>
+                        </div>
+                        <svg width="160" height="44" viewBox="0 0 220 60" fill="none" aria-hidden="true">
+                            <path d="M12 44C28 20 42 12 50 28C56 40 38 48 48 34C58 20 76 16 82 36C86 46 98 24 114 22C130 20 122 42 138 36C154 30 168 14 182 28C190 36 198 32 208 24" stroke="#C9A24B" stroke-width="1.7" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. COMO FUNCIONA -->
+        <section id="como-funciona">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Metodologia</div>
+                    <h2>Quatro etapas de condução transparente.</h2>
+                    <p>Do primeiro relato à conclusão técnica, você acompanha cada passo com previsibilidade.</p>
+                </div>
+
+                <div class="timeline-wrapper" id="timeline-section">
+                    <div class="timeline-track">
+                        <div class="timeline-progress" id="timeline-progress"></div>
+                    </div>
+
+                    <div class="timeline-grid">
+                        <div class="timeline-step reveal">
+                            <div class="step-badge">01</div>
+                            <div class="step-content">
+                                <h3>Triagem Preliminar</h3>
+                                <p>Recebemos seu relato pelo WhatsApp ou formulário e agendamos a reunião com o advogado especialista.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step reveal delay-1">
+                            <div class="step-badge">02</div>
+                            <div class="step-content">
+                                <h3>Diagnóstico Documental</h3>
+                                <p>Analisamos contratos, provas e riscos processuais para apresentar um parecer franco sobre a viabilidade jurídica.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step reveal delay-2">
+                            <div class="step-badge">03</div>
+                            <div class="step-content">
+                                <h3>Atuação Estratégica</h3>
+                                <p>Elaboramos notificações extrajudiciais, acordos ou medidas judiciais com rigor técnico e agilidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step reveal delay-3">
+                            <div class="step-badge">04</div>
+                            <div class="step-content">
+                                <h3>Relatórios Contínuos</h3>
+                                <p>Você recebe atualizações periódicas diretamente no seu celular sobre cada movimentação relevante.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. DIFERENCIAIS (SEÇÃO CLARA #F7F4EC) -->
+        <section class="section-light" id="diferenciais">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Padrão de Atendimento</div>
+                    <h2>Por que clientes exigentes confiam em nossa banca.</h2>
+                    <p>Construímos relações de longo prazo baseadas em ética, disponibilidade e profundidade técnica.</p>
+                </div>
+
+                <div class="differentials-grid">
+                    <div class="diff-card reveal">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Acesso Direto aos Sócios</h3>
+                        <p>Seu caso não é delegado a estagiários ou centrais de atendimento. O advogado titular conduz pessoalmente a estratégia e atende você.</p>
+                    </div>
+
+                    <div class="diff-card reveal delay-1">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Infraestrutura 100% Digital</h3>
+                        <p>Reuniões por videoconferência, assinatura digital com validade jurídica e envio de documentos pelo celular, sem deslocamentos desnecessários.</p>
+                    </div>
+
+                    <div class="diff-card reveal">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Visão Preventiva e Negocial</h3>
+                        <p>Sempre que vantajoso ao cliente, priorizamos composições extrajudiciais céleres que preservam tempo, recursos financeiros e desgaste emocional.</p>
+                    </div>
+
+                    <div class="diff-card reveal delay-1">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <path d="M9 15l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Transparência Contratual</h3>
+                        <p>Honorários estabelecidos de forma clara em contrato escrito, em estrita observância à tabela da OAB, sem surpresas ou custos ocultos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. DEPOIMENTOS -->
+        <section id="depoimentos">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Reconhecimento</div>
+                    <h2>A percepção de quem conhece nosso rigor no dia a dia.</h2>
+                </div>
+
+                <div class="testimonial-carousel reveal" id="testimonial-carousel" aria-roledescription="carousel" aria-label="Relatos sobre o atendimento">
+                    <div class="testimonial-track" id="testimonial-track">
+                        <div class="testimonial-slide" role="group" aria-label="1 de 3">
+                            <div class="stars-row" aria-label="5 estrelas">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                “A clareza na explicação dos contratos societários e a postura ética dos sócios trouxeram a tranquilidade que nossa diretoria buscava há anos. Atendimento pontual e extremamente técnico.”
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <div class="author-info">
+                                    <strong>Marcos Vinícius Cavalcante</strong>
+                                    <span>Diretor Industrial • Imperatriz, MA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide" role="group" aria-label="2 de 3">
+                            <div class="stars-row" aria-label="5 estrelas">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                “Em um momento delicado de inventário familiar, encontramos no escritório um acolhimento humano aliado a uma organização documental impecável. Sempre fomos informados de cada etapa antes mesmo de perguntar.”
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <div class="author-info">
+                                    <strong>Dra. Helena Figueiredo</strong>
+                                    <span>Médica • São Luís, MA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide" role="group" aria-label="3 de 3">
+                            <div class="stars-row" aria-label="5 estrelas">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                “Mesmo morando fora do estado, todo o atendimento por videoconferência e assinatura eletrônica funcionou com perfeição. Seriedade e respeito exemplar ao cliente.”
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <div class="author-info">
+                                    <strong>Eduardo Santoro</strong>
+                                    <span>Engenheiro Civil • Brasília, DF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <div class="carousel-dots" id="carousel-dots">
+                            <button class="dot-btn active" data-slide="0" aria-label="Ir para depoimento 1"></button>
+                            <button class="dot-btn" data-slide="1" aria-label="Ir para depoimento 2"></button>
+                            <button class="dot-btn" data-slide="2" aria-label="Ir para depoimento 3"></button>
+                        </div>
+                        <div class="carousel-arrows">
+                            <button class="arrow-btn" id="prev-testimonial" aria-label="Depoimento anterior">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            </button>
+                            <button class="arrow-btn" id="next-testimonial" aria-label="Próximo depoimento">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. EQUIPE -->
+        <section id="equipe" class="section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Corpo Jurídico</div>
+                    <h2>Sócios com formação sólida e atuação dedicada.</h2>
+                </div>
+
+                <div class="team-grid">
+                    <article class="team-card reveal">
+                        <div class="team-photo">
+                            <!-- TROCAR POR FOTO REAL DO ADVOGADO 1 -->
+                            <svg width="100%" height="100%" viewBox="0 0 360 400" fill="none" aria-hidden="true">
+                                <circle cx="180" cy="145" r="46" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.05)"/>
+                                <path d="M95 360C95 290 130 250 180 250C230 250 265 290 265 360" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.03)"/>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <span class="team-oab">OAB/MA 14.920</span>
+                            <h3>Dr. Henrique de Almeida</h3>
+                            <p>Sócio-Fundador. Especialista em Direito Empresarial, Societário e Planejamento Patrimonial.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal delay-1">
+                        <div class="team-photo">
+                            <!-- TROCAR POR FOTO REAL DA ADVOGADA 2 -->
+                            <svg width="100%" height="100%" viewBox="0 0 360 400" fill="none" aria-hidden="true">
+                                <circle cx="180" cy="145" r="46" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.05)"/>
+                                <path d="M95 360C95 290 130 250 180 250C230 250 265 290 265 360" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.03)"/>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <span class="team-oab">OAB/MA 16.408</span>
+                            <h3>Dra. Beatriz Costa</h3>
+                            <p>Sócia-Diretora. Especialista em Direito de Família, Sucessões, Inventários e Direito Civil.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal delay-2">
+                        <div class="team-photo">
+                            <!-- TROCAR POR FOTO REAL DO ADVOGADO 3 -->
+                            <svg width="100%" height="100%" viewBox="0 0 360 400" fill="none" aria-hidden="true">
+                                <circle cx="180" cy="145" r="46" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.05)"/>
+                                <path d="M95 360C95 290 130 250 180 250C230 250 265 290 265 360" stroke="#C9A24B" stroke-width="1.2" fill="rgba(201,162,75,0.03)"/>
+                            </svg>
+                        </div>
+                        <div class="team-info">
+                            <span class="team-oab">OAB/MA 18.115</span>
+                            <h3>Dr. Leonardo Tavares</h3>
+                            <p>Sócio. Especialista em Direito Trabalhista Estratégico, Previdenciário e Contencioso Cível.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header reveal" style="margin-left: auto; margin-right: auto; text-align: left;">
+                    <div class="section-label">Esclarecimentos</div>
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Respostas objetivas sobre o funcionamento das consultas e procedimentos do escritório.</p>
+                </div>
+
+                <div class="faq-container reveal">
+                    <div class="faq-item open">
+                        <button class="faq-question" aria-expanded="true">
+                            <span>Como funciona o primeiro contato com o escritório?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>No primeiro contato via WhatsApp, realizamos uma triagem rápida para compreender a natureza da sua demanda e agendar uma consulta (presencial ou por videoconferência) diretamente com o sócio especialista na matéria.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Posso ser atendido mesmo morando em outra cidade ou estado?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>Sim. Atualmente, 100% dos processos judiciais no Brasil tramitam de forma eletrônica. Realizamos reuniões por chamada de vídeo, coleta de documentos digitalizados e assinatura eletrônica com plena validade jurídica.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Quais documentos devo separar para a primeira análise?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>Documento de identificação, comprovante de endereço e os documentos essenciais ligados ao fato (contratos, notificações, carteira de trabalho, certidões ou número do processo, caso já exista). Nossa equipe orienta a lista exata no WhatsApp.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Como são definidos os honorários advocatícios?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>Os honorários são fixados em estrita conformidade com a tabela da OAB, levando em conta a complexidade da causa, o tempo estimado de trabalho e o valor envolvido. Tudo é formalizado previamente em contrato transparente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Como acompanho o andamento do meu processo após contratar?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>Nosso escritório adota comunicação ativa: sempre que houver movimentação relevante nos autos, enviamos um resumo em linguagem clara para o seu WhatsApp, além de você contar com canal direto com o advogado responsável.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O escritório atua apenas em processos judiciais ou também em acordos?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>Atuamos fortemente na via extrajudicial e consultiva — elaborando contratos, pareceres, inventários em cartório e mediação de acordos — sempre buscando a solução mais célere e segura para o cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>As informações que eu enviar pelo site são confidenciais?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">
+                                <p>Absolutamente. Mesmo antes da assinatura de contrato, todo relato confiado ao advogado está protegido pelo sigilo profissional previsto em lei e no Código de Ética e Disciplina da OAB.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. CTA FINAL -->
+        <section id="contato-final">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <span class="corner-ornament corner-tl"></span>
+                    <span class="corner-ornament corner-tr"></span>
+                    <span class="corner-ornament corner-bl"></span>
+                    <span class="corner-ornament corner-br"></span>
+
+                    <div class="cta-grid">
+                        <div>
+                            <div class="section-label">Atendimento Prioritário</div>
+                            <h2>Agende uma conversa reservada com nossos sócios.</h2>
+                            <p style="margin-bottom: 28px;">
+                                Preencha os campos ao lado para iniciar seu atendimento no WhatsApp já com as informações essenciais organizadas.
+                            </p>
+                            <div class="hero-badges" style="border-top: none; padding-top: 0; flex-direction: column; gap: 14px;">
+                                <div class="badge-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    <span data-config="phoneDisplay">(98) 99140-6415</span>
+                                </div>
+                                <div class="badge-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <span data-config="addressDisplay">Edifício Aracati Office, Sala 804 — Centro, Imperatriz - MA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="final-form" novalidate>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="final-name">Seu nome</label>
+                                    <input type="text" id="final-name" class="form-control" placeholder="Nome completo" required>
+                                    <span class="error-msg">Informe seu nome completo.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="final-phone">Seu WhatsApp</label>
+                                    <input type="tel" id="final-phone" class="form-control" placeholder="(00) 00000-0000" required>
+                                    <span class="error-msg">Informe um WhatsApp válido.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="final-area">Área do caso</label>
+                                <select id="final-area" class="form-control" required>
+                                    <option value="" disabled selected>Selecione a especialidade</option>
+                                    <option value="Direito Empresarial e Societário">Direito Empresarial e Societário</option>
+                                    <option value="Direito Trabalhista">Direito Trabalhista</option>
+                                    <option value="Direito Previdenciário">Direito Previdenciário</option>
+                                    <option value="Direito de Família e Sucessões">Direito de Família e Sucessões</option>
+                                    <option value="Direito Civil e Contratos">Direito Civil e Contratos</option>
+                                    <option value="Direito Criminal Consultivo">Direito Criminal Consultivo</option>
+                                </select>
+                                <span class="error-msg">Selecione a área do caso.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="final-message">Breve relato da situação</label>
+                                <textarea id="final-message" rows="3" class="form-control" placeholder="Descreva de forma resumida como podemos auxiliar..." required></textarea>
+                                <span class="error-msg">Escreva um breve resumo do seu caso.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 6px;">
+                                <span>Enviar para o WhatsApp do Escritório</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 12. RODAPÉ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#inicio" class="brand-logo" style="margin-bottom: 16px;">
+                        <div class="brand-monogram">A&C</div>
+                        <div class="brand-text-wrap">
+                            <span class="brand-name" data-config="firmName">Almeida <span>&</span> Costa</span>
+                            <span class="brand-sub">Advogados Associados</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.843rem;">
+                        Advocacia consultiva e contenciosa pautada pela excelência técnica, ética profissional e defesa intransigente dos interesses de nossos constituintes.
+                    </p>
+                    <div class="social-row">
+                        <a href="#" class="social-btn" aria-label="LinkedIn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="Instagram">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="social-btn" data-wa-direct aria-label="WhatsApp">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="#areas">Áreas de Atuação</a></li>
+                        <li><a href="#sobre">Sobre a Banca</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#diferenciais">Nossos Diferenciais</a></li>
+                        <li><a href="#equipe">Corpo Jurídico</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li data-config="addressDisplay">Edifício Aracati Office, Sala 804 — Centro, Imperatriz - MA</li>
+                        <li data-config="phoneDisplay">Tel / WhatsApp: (98) 99140-6415</li>
+                        <li data-config="emailDisplay">contato@almeidacosta.adv.br</li>
+                        <li data-config="oabFooter">Registro OAB/MA 14.920 • CNPJ 38.491.027/0001-19</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Expediente</h4>
+                    <ul class="footer-links">
+                        <li>Segunda a Sexta-feira</li>
+                        <li style="color: var(--text-primary); font-weight: 500;">08h30 às 18h30</li>
+                        <li style="margin-top: 6px;">Atendimento presencial mediante agendamento prévio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <div class="oab-compliance">
+                    <strong>Conformidade Ética OAB:</strong> Este site possui caráter estritamente informativo, elaborado em integral observância ao Código de Ética e Disciplina da Ordem dos Advogados do Brasil e ao Provimento nº 205/2021 do Conselho Federal da OAB. Não realizamos promessa de resultado ou captação indevida de clientela.
+                </div>
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                    <span>© 2026 <span data-config="firmNamePlain">Almeida & Costa Advogados</span>. Todos os direitos reservados.</span>
+                    <span>Desenvolvido por <a href="https://wa.me/5598991406415" target="_blank" rel="noopener" style="color: var(--gold-primary); text-decoration: none;">Júlio | Design & Web</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Botão Flutuante de WhatsApp -->
+    <a href="#" class="floating-wa" data-wa-direct aria-label="Atendimento via WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+    </a>
+
+    <!-- ==========================================================================
+         JAVASCRIPT: CONFIG CENTRALIZADO + INTERAÇÕES REFINADAS
+         ========================================================================== -->
+    <script>
+        const CONFIG = {
+            firmNameHTML: 'Almeida <span>&</span> Costa',
+            firmNamePlain: 'Almeida & Costa Advogados',
+            whatsappNumber: '5598991406415',
+            phoneFormatted: '(98) 99140-6415',
+            email: 'contato@almeidacosta.adv.br',
+            address: 'Edifício Aracati Office, Sala 804 — Centro, Imperatriz - MA',
+            oabBadge: 'OAB/MA Regular • PJ 14.920',
+            oabFooter: 'Registro OAB/MA 14.920 • CNPJ 38.491.027/0001-19',
+            defaultWaMessage: 'Olá! Acessei o site do escritório Almeida & Costa Advogados e gostaria de agendar um atendimento jurídico.'
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-config="firmName"]').forEach(el => el.innerHTML = CONFIG.firmNameHTML);
+            document.querySelectorAll('[data-config="firmNamePlain"]').forEach(el => el.textContent = CONFIG.firmNamePlain);
+            document.querySelectorAll('[data-config="phoneDisplay"]').forEach(el => el.textContent = CONFIG.phoneFormatted);
+            document.querySelectorAll('[data-config="emailDisplay"]').forEach(el => el.textContent = CONFIG.email);
+            document.querySelectorAll('[data-config="addressDisplay"]').forEach(el => el.textContent = CONFIG.address);
+            document.querySelectorAll('[data-config="oabBadge"]').forEach(el => el.textContent = CONFIG.oabBadge);
+            document.querySelectorAll('[data-config="oabFooter"]').forEach(el => el.textContent = CONFIG.oabFooter);
+
+            const directWaUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.defaultWaMessage)}`;
+            document.querySelectorAll('[data-wa-direct]').forEach(link => {
+                link.setAttribute('href', directWaUrl);
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        });
+
+        // Header, Progresso de Leitura e Timeline
+        const header = document.getElementById('site-header');
+        const progressBar = document.getElementById('reading-progress');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const timelineSection = document.getElementById('timeline-section');
+        const timelineProgress = document.getElementById('timeline-progress');
+        const sections = document.querySelectorAll('main section[id]');
+        const navLinks = document.querySelectorAll('.nav-desktop .nav-link');
+
+        function handleScroll() {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = `${docHeight > 0 ? (scrollY / docHeight) * 100 : 0}%`;
+
+            header.classList.toggle('scrolled', scrollY > 36);
+            backToTopBtn.classList.toggle('visible', scrollY > 600);
+
+            let currentSectionId = '';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 140;
+                if (scrollY >= top && scrollY < top + sec.offsetHeight) {
+                    currentSectionId = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${currentSectionId}`);
+            });
+
+            if (timelineSection && timelineProgress) {
+                const rect = timelineSection.getBoundingClientRect();
+                const winH = window.innerHeight;
+                if (rect.top < winH * 0.75 && rect.bottom > 0) {
+                    const ratio = Math.min(1, Math.max(0, (winH * 0.75 - rect.top) / rect.height));
+                    const pct = `${Math.round(ratio * 100)}%`;
+                    if (window.innerWidth >= 1024) {
+                        timelineProgress.style.width = pct;
+                        timelineProgress.style.height = '100%';
+                    } else {
+                        timelineProgress.style.height = pct;
+                        timelineProgress.style.width = '100%';
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Gaveta Lateral Mobile (Slide-Over Drawer)
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLabel = document.getElementById('menu-toggle-label');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileBackdrop = document.getElementById('mobile-backdrop');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function setMobileMenu(open) {
+            menuToggle.classList.toggle('open', open);
+            mobileDrawer.classList.toggle('open', open);
+            mobileBackdrop.classList.toggle('open', open);
+            menuToggle.setAttribute('aria-expanded', open);
+            mobileDrawer.setAttribute('aria-hidden', !open);
+            menuLabel.textContent = open ? 'Fechar' : 'Menu';
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            setMobileMenu(!menuToggle.classList.contains('open'));
+        });
+
+        mobileBackdrop.addEventListener('click', () => setMobileMenu(false));
+        mobileLinks.forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+
+        // Revelação Suave e Contadores
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const counterObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'), 10);
+                    const duration = 1800;
+                    const startTime = performance.now();
+
+                    function updateCounter(now) {
+                        const progress = Math.min((now - startTime) / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(eased * target).toLocaleString('pt-BR');
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            el.textContent = target.toLocaleString('pt-BR');
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                    obs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // Spotlight nos Cards
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+
+            card.addEventListener('click', () => {
+                const selectedArea = card.getAttribute('data-area-select');
+                const finalSelect = document.getElementById('final-area');
+                if (selectedArea && finalSelect) finalSelect.value = selectedArea;
+            });
+        });
+
+        // Carrossel de Depoimentos
+        const track = document.getElementById('testimonial-track');
+        const dots = document.querySelectorAll('.dot-btn');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        const carousel = document.getElementById('testimonial-carousel');
+        let currentSlide = 0;
+        let autoplayTimer;
+
+        function goToSlide(index) {
+            currentSlide = (index + dots.length) % dots.length;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+        }
+
+        function startAutoplay() {
+            autoplayTimer = setInterval(() => goToSlide(currentSlide + 1), 6500);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayTimer);
+        }
+
+        prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); stopAutoplay(); startAutoplay(); });
+        nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); stopAutoplay(); startAutoplay(); });
+        dots.forEach(dot => dot.addEventListener('click', () => {
+            goToSlide(parseInt(dot.getAttribute('data-slide'), 10));
+            stopAutoplay();
+            startAutoplay();
+        }));
+
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+        startAutoplay();
+
+        // FAQ Acordeão
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.toggle('open');
+                btn.setAttribute('aria-expanded', isOpen);
+            });
+        });
+
+        // Máscara e Validação de Formulários
+        function maskPhone(input) {
+            input.addEventListener('input', e => {
+                let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+                if (v.length > 6) {
+                    e.target.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+                } else if (v.length > 2) {
+                    e.target.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
+                } else if (v.length > 0) {
+                    e.target.value = `(${v}`;
+                }
+                input.classList.remove('invalid');
+            });
+        }
+
+        maskPhone(document.getElementById('hero-phone'));
+        maskPhone(document.getElementById('final-phone'));
+
+        function setupFormValidation(formId, fields) {
+            const form = document.getElementById(formId);
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                let valid = true;
+
+                fields.forEach(field => {
+                    const el = document.getElementById(field.id);
+                    const val = el.value.trim();
+                    const fieldOk = field.type === 'phone' ? val.replace(/\D/g, '').length >= 10 : val.length > 1;
+
+                    if (!fieldOk) {
+                        el.classList.add('invalid');
+                        valid = false;
+                    } else {
+                        el.classList.remove('invalid');
+                    }
+                    el.addEventListener('input', () => el.classList.remove('invalid'), { once: true });
+                });
+
+                if (!valid) return;
+
+                const name = document.getElementById(fields[0].id).value.trim();
+                const phone = document.getElementById(fields[1].id).value.trim();
+                const area = document.getElementById(fields[2].id).value;
+                const extraMsg = fields[3] ? document.getElementById(fields[3].id).value.trim() : '';
+
+                let text = `Olá! Solicito análise inicial pelo site *${CONFIG.firmNamePlain}*.\n\n` +
+                           `*Nome:* ${name}\n` +
+                           `*WhatsApp:* ${phone}\n` +
+                           `*Área Jurídica:* ${area}`;
+                if (extraMsg) text += `\n*Relato:* ${extraMsg}`;
+
+                window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+            });
+        }
+
+        setupFormValidation('hero-form', [
+            { id: 'hero-name' },
+            { id: 'hero-phone', type: 'phone' },
+            { id: 'hero-area' }
+        ]);
+
+        setupFormValidation('final-form', [
+            { id: 'final-name' },
+            { id: 'final-phone', type: 'phone' },
+            { id: 'final-area' },
+            { id: 'final-message' }
+        ]);
+    </script>
+</body>
+</html>
